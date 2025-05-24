@@ -12,9 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonaControlador {
     @Autowired
     public PersonaServicio personservice;
+
     @PutMapping
-    public String crearPerson (@RequestBody Persona per){
+    public String crearPerson(@RequestBody Persona per) {
         personservice.AgregarPersona(per);
         return "persona creada";
     }
- }
+}

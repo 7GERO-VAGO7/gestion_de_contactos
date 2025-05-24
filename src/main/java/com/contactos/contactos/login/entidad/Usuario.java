@@ -9,15 +9,15 @@ import jakarta.persistence.Id;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id ;
+    private Long id;
     private String correo;
     private String contrasena;
 
     public Usuario() {
     }
 
-    public Usuario(String contrasena, String correo,Long id) {
-        this.id=id;
+    public Usuario(String contrasena, String correo, Long id) {
+        this.id = id;
         this.contrasena = contrasena;
         this.correo = correo;
 

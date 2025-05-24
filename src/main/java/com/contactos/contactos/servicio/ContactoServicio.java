@@ -27,28 +27,29 @@ public class ContactoServicio {
     public Optional<Contacto> buscarId(long id) {
         return repository.findById(id);
     }
+
     public List<Contacto> buscarPorNombre(String nombre) {
         List<Contacto> contactos = repository.findAll();
         List<Contacto> result = new ArrayList<>();
 
         for (Contacto fly : contactos) {
-            if (fly.getPersona().getNombre().equals(nombre)){
+            if (fly.getPersona().getNombre().equals(nombre)) {
                 result.add(fly);
             }
         }
         return result;
     }
 
-    public Persona buscarPorId(Long id){
-         Persona result = null;
-         List<Persona> todasLasPersonas = personaRepository.findAll();
+    public Persona buscarPorId(Long id) {
+        Persona result = null;
+        List<Persona> todasLasPersonas = personaRepository.findAll();
 
-         for (Persona persona : todasLasPersonas){
-             if (persona.getId().equals(id)){
-                 return result = persona;
-             }
-         }
-         return result;
+        for (Persona persona : todasLasPersonas) {
+            if (persona.getId().equals(id)) {
+                return result = persona;
+            }
+        }
+        return result;
 
     }
 
@@ -58,7 +59,7 @@ public class ContactoServicio {
         personaRepository.save(persona);
         try {
             return repository.save(contacto);
-        }catch (Exception e){
+        } catch (Exception e) {
             return null;
         }
 

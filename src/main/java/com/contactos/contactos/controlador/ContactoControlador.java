@@ -23,7 +23,7 @@ public class ContactoControlador {
 
 
     @GetMapping
-    public List<Contacto> todosLosContactos(){
+    public List<Contacto> todosLosContactos() {
         return servicio.todosContactos();
     }
 

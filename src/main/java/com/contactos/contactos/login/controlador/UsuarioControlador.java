@@ -16,11 +16,11 @@ public class UsuarioControlador {
 
     @PostMapping("/login")
     public ResponseEntity<Usuario> login(@RequestBody Usuario usuario) {
-        Usuario users = usuarioServicio.login(usuario.getCorreo(),usuario.getContrasena());
+        Usuario users = usuarioServicio.login(usuario.getCorreo(), usuario.getContrasena());
 
-        if (users != null){
+        if (users != null) {
             return ResponseEntity.ok(usuario);
-        }else {
+        } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
 
