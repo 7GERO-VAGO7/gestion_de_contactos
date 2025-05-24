@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/Contactos")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ContactoControlador {
     @Autowired
     private ContactoServicio servicio;
@@ -22,7 +23,7 @@ public class ContactoControlador {
 
 
     @GetMapping
-    public List<Contacto> todosLosContactos(){
+    public List<Contacto> todosLosContactos() {
         return servicio.todosContactos();
     }
 

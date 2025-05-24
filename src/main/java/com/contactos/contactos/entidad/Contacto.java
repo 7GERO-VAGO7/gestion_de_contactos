@@ -1,8 +1,6 @@
 package com.contactos.contactos.entidad;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 
 import java.util.Date;
 
@@ -82,5 +80,9 @@ public class Contacto {
                 ", correo='" + correo + '\'' +
                 ", fechaCumpleano=" + fechaCumpleano +
                 '}';
+    }
+
+    public String getNombre() {
+        return null;
     }
 }
