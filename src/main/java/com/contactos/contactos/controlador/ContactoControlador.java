@@ -13,7 +13,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/Contactos")
+@RequestMapping("/contactos")
 @CrossOrigin(origins = "http://localhost:3000")
 public class ContactoControlador {
     @Autowired
