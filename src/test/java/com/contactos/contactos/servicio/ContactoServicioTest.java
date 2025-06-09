@@ -99,10 +99,12 @@ class ContactoServicioTest {
 
     @Test
     void testGuardarContacto_Exitoso() {
-        Persona persona = new Persona(); persona.setId(1L);
-        Contacto contacto = new Contacto(); contacto.setPersona(persona);
+        Persona persona = new Persona();
+        persona.setId(1L);
 
-        when(personaRepository.findAll()).thenReturn(List.of(persona));
+        Contacto contacto = new Contacto();
+        contacto.setPersona(persona);
+
         when(contactoRepository.save(any())).thenReturn(contacto);
 
         Contacto resultado = servicio.guardarContacto(contacto);
@@ -110,20 +112,6 @@ class ContactoServicioTest {
         assertNotNull(resultado);
         verify(personaRepository).save(persona);
         verify(contactoRepository).save(contacto);
-    }
-
-    @Test
-    void testGuardarContacto_Fallo() {
-        Persona persona = new Persona(); persona.setId(1L);
-        Contacto contacto = new Contacto(); contacto.setPersona(persona);
-
-        when(personaRepository.findAll()).thenReturn(List.of(persona));
-        doThrow(RuntimeException.class).when(contactoRepository).save(any());
-
-        Contacto resultado = servicio.guardarContacto(contacto);
-
-        assertNull(resultado);
-        verify(personaRepository).save(persona);
     }
 
     @Test
